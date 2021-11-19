@@ -1,5 +1,6 @@
 import re
 import os
+import time
 
 leave = False
 while(leave is not True):
@@ -15,10 +16,12 @@ while(leave is not True):
             if insertBy == 1:
                 check_str = str(input("Digite o endereco IP: "))
 
-                matches = re.finditer(regex, check_str, re.MULTILINE)
-
-                for matchNum, match in enumerate(matches, start=1):
-                    print("IP valido: {match}\n".format(match=match.group()))
+                if re.search(regex, check_str) is not None:
+                    for thing in re.finditer(regex, check_str):
+                        print('IP valido: ' + thing[0])
+                else:
+                    print('IP invalido...')
+                time.sleep(1)
             if insertBy == 2:
                 print("Exibindo arquivos...")
                 for file in os.listdir():
@@ -31,6 +34,7 @@ while(leave is not True):
                         for match in re.finditer(regex, line):
                             print("IP identificado: {match}".format(
                                 match=match.group()))
+                    time.sleep(1)
                 except Exception as e:
                     print("Erro: " + e)
             if insertBy == 0:
@@ -46,10 +50,12 @@ while(leave is not True):
             if insertBy == 1:
                 check_str = str(input("Digite o DDD: "))
 
-                matches = re.finditer(regex, check_str, re.MULTILINE)
-
-                for matchNum, match in enumerate(matches, start=1):
-                    print("DDD valido: {match}\n".format(match=match.group()))
+                if re.search(regex, check_str) is not None:
+                    for thing in re.finditer(regex, check_str):
+                        print('DDD valido: ' + thing[0])
+                else:
+                    print('DDD invalido...')
+                time.sleep(1)
             if insertBy == 2:
                 print("Exibindo arquivos...")
                 for file in os.listdir():
@@ -62,6 +68,7 @@ while(leave is not True):
                         for match in re.finditer(regex, line):
                             print("DDD identificado: {match}".format(
                                 match=match.group()))
+                    time.sleep(1)
                 except Exception as e:
                     print("Erro: " + e)
             if insertBy == 0:
@@ -77,10 +84,12 @@ while(leave is not True):
             if insertBy == 1:
                 check_str = str(input("Digite o CPF: "))
 
-                matches = re.finditer(regex, check_str, re.MULTILINE)
-
-                for matchNum, match in enumerate(matches, start=1):
-                    print("CPF valido: {match}\n".format(match=match.group()))
+                if re.search(regex, check_str) is not None:
+                    for thing in re.finditer(regex, check_str):
+                        print('CPF valido: ' + thing[0])
+                else:
+                    print('CPF invalido...')
+                time.sleep(1)
             if insertBy == 2:
                 print("Exibindo arquivos...")
                 for file in os.listdir():
@@ -93,6 +102,7 @@ while(leave is not True):
                         for match in re.finditer(regex, line):
                             print("CPF identificado: {match}".format(
                                 match=match.group()))
+                    time.sleep(1)
                 except Exception as e:
                     print("Erro: " + e)
             if insertBy == 0:
