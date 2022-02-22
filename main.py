@@ -2,7 +2,7 @@ import re
 import os
 import time
 
-leave = True
+leave = False
 while(leave is not True):
     op = int(input("Digite a opcao que deseja realizar:\n1 - Verificar IPs\n2 - Verificar DDD\n3 - Verificar CPF\n0 - Fechar\n"))
 
